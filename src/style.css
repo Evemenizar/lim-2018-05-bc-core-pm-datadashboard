@@ -1,4 +1,4 @@
-header {
+header{
     display: flex;
     background: #313533;
     height: 50px;
@@ -11,57 +11,29 @@ body{
     background-size: cover;
     background-repeat: no-repeat; */  
 }
-form{
-    width: 360px;
-    border-radius: 3px;
-    margin: 200px auto;
-}
-form h1{
-    text-align: center;
-    font-family: "Varela Round";
-    font-size: 50px;
-    color: #FFE50E;
-}
-
 #start{
+    padding: 100px;
     margin: 100px;
-    padding: 90px;
-    display: none;
+    
 }
-.preadmision{
-    margin: 9px auto 0 auto;
-    padding: 60px;
-}
-
-input{
-	color: #000000;
-	background: #ffffff;
-    font: 1em;
-    box-sizing: border-box;
-	border: none;
-	border-radius: 5px;
-	display: block;
-	margin: 9px auto 0 auto;
-	padding: 5px;
-}
-
-form button{
-    border: none;
+#start button{
     padding: 15px 32px;
     display: inline-block;
     font-size: 16px;
     margin: 4px 2px;
     cursor: pointer;
-    background:#FFE50E;  
+    background-color: transparent;
+    text-align: center;
+    border: 1px solid #ffc107;
+    color: #ffc107;
+  
 }
-#start button{
-    font-size: 16px;
-    cursor: pointer;
+#studentPage{
+    font-family: "varela round";
+    font-size: 12px;
+    padding: 35px;
+    display: none;
 }
-h2{
-    font-family: "Varela Round";
-}
-
 
 
 /*
