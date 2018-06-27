@@ -2,30 +2,62 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Data Dashboard</title>
     <link rel="stylesheet" href="style.css" />
     <link href="https://fonts.googleapis.com/css?family=Varela Round" rel="stylesheet"/>
   </head>
-  <body> 
- 
-     <header>
-      <img src="../images/logo_laboratoria_blanco.png" width="150px" height= "42px">
-      </header>
+  <body>
+    
+    <header>
+            <img src="../images/logo_laboratoria_blanco.png" width="130px" height= "35px">
+    </header>
+    <br><br>
+    
+    <div id="start">
+      <img src="../images/directorio.jpg" alt="directorio" width="300px" height="200px">
+      <button type="button" id="directory">DIRECTORIO</button> 
+      <img src="../images/preadmision.jpg" alt="pre-admision" width="300px" height="200px">
+      <button type="button" id="preadmision">PRE-ADMISION</button>
+      <img src="../images/bootcamp.jpeg" alt="bootcamp" width="300px" height="200px">
+      <button type="button" id="bootcamp">BOOTCAMP</button>
+    </div>
+    
+    <div id ="studentPage">
+      <h1>DIRECTORIO</h1>
+      <ul name="" id="cohort">
+      </ul>
+    </div>
+    
+    <div id="filSede">
+      <h2>Sede:</h2>
+      <select class="sede">
+        <option value="lim">Lima</option>
+        <option value="saop">Sao Paulo</option>
+        <option value="cmdx">Ciudad de Mexico</option>
+        <option value="scl">Santiago de chile</option>
+      </select>
+    </div>
+    
+    <div id="filGeneration">
+      <h2>Generación:</h2>
+      <select class="generation">
+          <option value="Lim-2018-I">Lim-2018-I</option>
+          <option value="Lim-2017-II">Lim-2017-II</option>
+          <option value="Lim-2017-I">Lim-2017-I</option>
+          <option>Sp-2018-I</option>
+          <option>Sp-2017-II</option>
+          <option>Sp-2017-I</option>
+      </select>
+    </div>
 
-      <div id="start">
-        <img src="../images/directorio.jpg" alt="directorio" width="300px" height="200px">
-        <button type="button" id="directory">DIRECTORIO</button> 
-        <img src="../images/preadmision.jpg" alt="pre-admision" width="300px" height="200px">
-        <button type="button" id="preadmision">PRE-ADMISION</button>
-        <img src="../images/bootcamp.jpeg" alt="bootcamp" width="300px" height="200px">
-        <button type="button" id="bootcamp">BOOTCAMP</button>
-        </div>
-           
-       <div id ="studentPage" >
-         <h1>ALUMNAS</h1>
-        <ul name="" id="cohort">
-          </ul>
-      </div>
+        <div id="filAlphabet">
+          <h2>Orden alfabetico:</h2>
+          <select class="oAlfabet">
+            <option value="ascendente">Ascendente</option>
+            <option value="descendente">Descendente</option>
+          </select>
+          </div>
 
     <script src="data.js"></script>
     <script src="main.js"></script>

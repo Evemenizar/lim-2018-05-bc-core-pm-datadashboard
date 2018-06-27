@@ -1,9 +1,8 @@
-header{
+header{ 
     display: flex;
     background: #313533;
     height: 50px;
     padding: 40px;
-
 }
 body{
     background-color: #c4c5c6;
@@ -31,11 +30,29 @@ body{
 #studentPage{
     font-family: "varela round";
     font-size: 12px;
-    padding: 35px;
+    padding-left: 30px;
     display: none;
 }
-
-
+#filSede{
+    float: left;
+    font-family: "varela round";
+    font-size: 12px;
+    padding: 80px;
+    display: none;
+}
+#filGeneration{
+    float: left;
+    font-family: "varela round";
+    font-size: 12px;
+    padding: 80px;
+    display: none;
+}
+#filAlphabet{
+    float: left;
+    font-family: "varela round";
+    font-size: 12px;
+    padding: 80px;
+    display: none;
+}
 /*
 #969FAA;
-
