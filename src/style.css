@@ -11,9 +11,9 @@ body{
     background-repeat: no-repeat; */  
 }
 #start{
-    padding: 100px;
-    margin: 100px;
-    
+  /*  padding: 100px;
+    margin: 100px; */
+    float: left; 
 }
 #start button{
     padding: 15px 32px;
@@ -25,33 +25,11 @@ body{
     text-align: center;
     border: 1px solid #ffc107;
     color: #ffc107;
-  
 }
 #studentPage{
     font-family: "varela round";
     font-size: 12px;
     padding-left: 30px;
-    display: none;
-}
-#filSede{
-    float: left;
-    font-family: "varela round";
-    font-size: 12px;
-    padding: 80px;
-    display: none;
-}
-#filGeneration{
-    float: left;
-    font-family: "varela round";
-    font-size: 12px;
-    padding: 80px;
-    display: none;
-}
-#filAlphabet{
-    float: left;
-    font-family: "varela round";
-    font-size: 12px;
-    padding: 80px;
     display: none;
 }
 /*
