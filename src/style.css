@@ -1,27 +1,31 @@
 header{ 
     background: #313533;
-   position: fixed;
-   top: 0;
-   left: 0;
-   width: 100%;
-   z-index: 100;
-   -o-transition: all 200ms ease;
-   transition: all 200ms ease;
+    position: fixed;
+    padding: 20px;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+    -o-transition: all 200ms ease;
+    transition: all 200ms ease;
 }
+.contenedor{
+    width: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+    max-width: 1000px;
 
-
+}
 body{
     background-image:  url(../images/woman_tech.jpg);
     background-repeat:no-repeat;
-    
 } 
 
-.image {
-    float: left;  
-    padding: 10px;
+.image { 
     display: block;
-    margin-left: auto;
-    margin-right: auto;
+    padding: 65px;
+    margin-top: auto;
+    margin-bottom: auto;
 }
 h1{
    color: #FFE50E;
@@ -35,37 +39,45 @@ h1{
    text-align: center;
    font-family: "Varela Round";
    font-size: 50px;
-  
+}
+#button-home{
+    padding: 15px 32px;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    background-color: #ffc107;
+    text-align: center;
+    border: 1px solid #ffc107;
+    color:#313533;
 }
 #head {
     display: none;
 }
 #menu-page{
-   display: none;
+    display: none;
    
 }
 #cohorts-page{
     display: none;
 }
 
-button{
-   border: none;
-   padding: 15px 32px;
+#button-cohorts{
+    padding: 15px 32px;
     display: inline-block;
     font-size: 16px;
     margin: 4px 2px;
     cursor: pointer;
-<<<<<<< HEAD
-   background:#FFE50E;
-  
-   
+    background-color: transparent;
+    text-align: center;
+    border: 1px solid #ffc107;
+    color: #ffc107;
 }
-
-
+#button-cohorts:hover {
+    background-color: #ffc107; 
+    color: white;
+}
 /*
 #969FAA;
 
-=======
- 
-}
->>>>>>> 23663b7afefee0d53277ea1d3f9dc1e68a261f75
+
