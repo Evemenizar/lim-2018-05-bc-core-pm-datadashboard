@@ -1,19 +1,28 @@
-const header = document.getElementById("header");
-const laboratoriapage = document.getElementById("start");
-const buttonDirectory = document.getElementById("directory");
-const studentPage = document.getElementById("studentPage");
-const select = document.getElementById("cohort");
-const filSede = document.getElementById("filSede");
-const filGeneration = document.getElementById("filGeneration");
-const filAlphabet = document.getElementById("filAlphabet");
-
-buttonDirectory.addEventListener('click', ()=>{
-    studentPage.style.display="block";
-    filSede.style.display="block";
-    filGeneration.style.display="block";
-    filAlphabet.style.display="block";
-    laboratoriapage.style.display="none";
-})  
+window.computeUsersStats = (users, progress, courses) => {
+    let usersWithStats = users;
+    let  stats = {
+       percent : 0 ,
+       exercises: {
+           total : 0,
+           completed : 0,
+           percent:0
+       },
+       reads:{
+        total : 0,
+        completed : 0,
+        percent:0
+       },
+       quizzes:{
+        total : 0,
+        completed : 0,
+        percent:0
+         }
+     }
+     usersWithStats.forEach(user => {
+         return user.stats = stats;
+     });
+    return usersWithStats;
+}
 
 window.sortUsers = (users, ordeBy, orderDirection) => {
 }
