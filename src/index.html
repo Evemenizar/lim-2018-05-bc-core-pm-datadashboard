@@ -7,36 +7,32 @@
     <link rel="stylesheet" href="style.css" />
     <link href="https://fonts.googleapis.com/css?family=Varela Round" rel="stylesheet"/>
   </head>
-  <body>
-    
-    <header>
-            <img src="../images/logo_laboratoria_blanco.png" width="130px" height= "35px">
+  <body> 
+    <header id='head'>
+       <img src="../Images/logo_laboratoria_blanco.png" width="130px" height= "35px">
     </header>
+    <div id="welcome-page">
+      <h1>Laboratoria Progress</h1>
+      <br><br><br>
+      <button type="button" id="button-home">INGRESAR</button>
+    </div>
+    <br>
+    <div id="menu-page">
+        <br><br>
+        <img src="../Images/directorio.jpg" width="300px" height="200px" class="image">
+        <br>
+        <img src="../Images/preadmision.jpg" width="300px" height="200px" class="image">
+        <br><br>
+       <button id="button-cohorts">Cohorts</button>
+       <button id="button-students">Estudiantes</button>
+    </div>
+    <div id="cohorts-page">
     <br><br>
-    
-    <div id="start">
-      <img src="../images/directorio.jpg" alt="directorio" width="300px" height="200px">
-      <button type="button" id="directory">DIRECTORIO</button> 
-      <img src="../images/preadmision.jpg" alt="pre-admision" width="300px" height="200px">
-      <button type="button" id="preadmision">PRE-ADMISION</button>
-      <img src="../images/bootcamp.jpeg" alt="bootcamp" width="300px" height="200px">
-      <button type="button" id="bootcamp">BOOTCAMP</button>
-    </div>
-    
-    <div id ="studentPage">
-      <h1>DIRECTORIO</h1>
-      <ul name="" id="cohort">
-      </ul>
-    </div>
-    
-    <div id="filSede">
-      <h2>Sede:</h2>
-      <select class="sede">
-        <option value="lim">Lima</option>
-        <option value="saop">Sao Paulo</option>
-        <option value="cmdx">Ciudad de Mexico</option>
-        <option value="scl">Santiago de chile</option>
+      <select name="" id="countries">
       </select>
+      <select name="" id="cohorts-select">
+      </select>
+      <section id="data"></section>
     </div>
     
     <div id="filGeneration">

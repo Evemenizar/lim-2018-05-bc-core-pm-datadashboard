@@ -15,4 +15,11 @@ buttonDirectory.addEventListener('click', ()=>{
     laboratoriapage.style.display="none";
 })  
 
-
+window.sortUsers = (users, ordeBy, orderDirection) => {
+}
+window.filterUsers = (users, search) => {
+}
+window.processCohortData = (options) => {
+    let computedUsers = computeUsersStats(options.cohortData.users, options.cohortData.progress, Object.keys(options.cohort.coursesIndex));
+    return computedUsers;
+}
