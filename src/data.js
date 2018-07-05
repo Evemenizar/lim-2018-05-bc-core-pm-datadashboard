@@ -1,5 +1,6 @@
-window.computeUsersStats = (users,progress,courses)=>{
-   let  stats = {
+window.computeUsersStats = (users, progress, courses) => {
+    let usersWithStats = users;
+    let  stats = {
        percent : 0 ,
        exercises: {
            total : 0,
@@ -17,20 +18,17 @@ window.computeUsersStats = (users,progress,courses)=>{
         percent:0
          }
      }
-    return 
+     usersWithStats.forEach(user => {
+         return user.stats = stats;
+     });
+    return usersWithStats;
 }
 
-window.sortUsers =(users,ordeBy,orderDirection) =>{
-
+window.sortUsers = (users, ordeBy, orderDirection) => {
 }
-
-window.filterUsers=(users,search)=>{
-
+window.filterUsers = (users, search) => {
 }
-window.processCohortData=(options)=>{
-    let users = options.cohortData.users;
-    let progress= options.cohortData.progress;
-    let usersWithStats = computeUsersStats( users,progress,courses );
-    let sortUsersWithStats = sortUsers(usersWithStats, '','');
-    return sortUsersWithStats;
+window.processCohortData = (options) => {
+    let computedUsers = computeUsersStats(options.cohortData.users, options.cohortData.progress, Object.keys(options.cohort.coursesIndex));
+    return computedUsers;
 }
