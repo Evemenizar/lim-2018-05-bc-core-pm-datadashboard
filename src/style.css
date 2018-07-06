@@ -9,28 +9,15 @@ header{
     -o-transition: all 200ms ease;
     transition: all 200ms ease;
 }
-<<<<<<< HEAD
-.contenedor{
-    width: 100%;
-    margin: 0 auto;
-    overflow: hidden;
-    max-width: 1000px;
-
-}
-body{
-    background-image:  url(../images/woman_tech.jpg);
-    background-repeat:no-repeat;
-} 
-=======
 body{
     background-image: url("../Images/woman_tech.jpg") ; 
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
     background-attachment: fixed;
+    margin: 0;
+    padding: 0;
 }  
->>>>>>> 1009def647c5fdb4a5724c6708e00fc67dfc315c
-
 .image { 
     display: block;
     padding: 65px;
@@ -46,68 +33,28 @@ h1{
    margin: 200px auto;
 }
 #welcome-page h1{
-<<<<<<< HEAD
-   text-align: center;
-   font-family: "Varela Round";
-   font-size: 50px;
-}
-#button-home{
-    padding: 15px 32px;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    cursor: pointer;
-    background-color: #ffc107;
-    text-align: center;
-    border: 1px solid #ffc107;
-    color:#313533;
-=======
     max-width: 960px;
     position: absolute;
     top: 200;
     left: 70;
-  
->>>>>>> 1009def647c5fdb4a5724c6708e00fc67dfc315c
 }
 #head {
     display: none;
 }
 #menu-page{
     display: none;
-   
 }
 #cohorts-page{
     display: none;
 }
-
-<<<<<<< HEAD
-#button-cohorts{
-=======
 button{
     border: none;
->>>>>>> 1009def647c5fdb4a5724c6708e00fc67dfc315c
     padding: 15px 32px;
     display: inline-block;
     font-size: 16px;
     margin: 4px 2px;
     cursor: pointer;
-<<<<<<< HEAD
-    background-color: transparent;
-    text-align: center;
-    border: 1px solid #ffc107;
-    color: #ffc107;
 }
-#button-cohorts:hover {
-    background-color: #ffc107; 
-    color: white;
-}
-/*
-#969FAA;
-
-=======
- 
-}
-
 #button-cohorts{
     width: 300px;
     height: 40px;
@@ -118,5 +65,4 @@ button{
     height: 40px;
     display: inline-block;
 }
->>>>>>> 1009def647c5fdb4a5724c6708e00fc67dfc315c
 
