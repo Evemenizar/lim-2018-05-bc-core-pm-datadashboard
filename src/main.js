@@ -3,14 +3,12 @@ const buttonHome = document.getElementById('button-home');
 const menuPage = document.getElementById('menu-page');
 const cohortsPage = document.getElementById('cohorts-page');
 const buttonCohorts = document.getElementById('button-cohorts');
-const head = document.getElementById('head');
 const countriesSelect = document.getElementById("countries");
 const cohortsSelect = document.getElementById("cohorts-select");
 const dataSection = document.getElementById('data');
 buttonHome.addEventListener('click', () => {
   menuPage.style.display = 'block';
   welcomePage.style.display = 'none';
-  head.style.display = 'block';
   document.body.style.backgroundColor = 'rgba(150, 159, 170, 0.28)';
   document.body.style.backgroundImage = 'none';
 })
@@ -79,30 +77,39 @@ const SelectSedesCohorts = () => {
         cohortData: {
           users: filterUsers,
           progress: progress
-        },
+          },
+          orderBy :'',
+          orderDirection : 'ASC',
+          search :''
+        
       }
       let usersWithStats = processCohortData(options);
        let template = '';
       console.log(usersWithStats);
+      template += '<br><tr>'+
+      '<th></th>'+
+      '<th>Ejercicios</th> '
+      '</tr>'
+        template += 
+        '<br><tr>'+
+          '<th>Nombre</th>'+
+          '<th>completados</th> '+   
+          '<th>Porcentaje de <br> completitud</th>'
+          '</tr>'
       usersWithStats.forEach(ele => {
-        console.log(ele)
-        console.log(ele.name);
-        console.log(ele.stats.exercises.total);
-        console.log(ele.stats.exercises.completed);
-        console.log(ele.stats.exercises.percent);
-        template += `<ul>
-        <li>${ele.name}</li>
-        <li>${ele.stats.exercises.total}</li>
-        <li>${ele.stats.exercises.completed}</li
-        <li>${ele.stats.exercises.percent}</li>
-        </ul>`
+      template += '<tr>';
+      template += `<td>${ele.name}</td>`
+      template += `<td>${ele.stats.exercises.completed}</td>`
+      template += `<td>${ele.stats.exercises.percent}</td>`
+      
       })
       dataSection.innerHTML = template;
     }
     else {
-      const otherscohorts = alert("no hay datos");
+      alert("no hay datos");
     }
   });
 
 }
+
 

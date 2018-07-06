@@ -1,40 +1,47 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Data Dashboard</title>
-    <link rel="stylesheet" href="style.css" />
-    <link href="https://fonts.googleapis.com/css?family=Varela Round" rel="stylesheet"/>
-  </head>
-  <body> 
-    <header id='head'>
-       <img src="../Images/logo_laboratoria_blanco.png" width="130px" height= "35px">
-    </header>
-    <div id="welcome-page">
-      <h1>Laboratoria Progress</h1>
-      <br><br><br>
-      <button type="button" id="button-home">INGRESAR</button>
-    </div>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Data Dashboard</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css?family=Varela Round" rel="stylesheet" />
+</head>
+<body>
+  <div id="welcome-page">
+    <h1>Laboratoria Progress</h1>
     <br>
-    <div id="menu-page">
-        <br><br>
-        <img src="../Images/directorio.jpg" width="300px" height="200px" class="image">
-        <br>
-        <img src="../Images/preadmision.jpg" width="300px" height="200px" class="image">
-        <br><br>
-       <button id="button-cohorts">Cohorts</button>
-       <button id="button-students">Estudiantes</button>
-    </div>
-    <div id="cohorts-page">
-    <br><br>
-      <select name="" id="countries">
-      </select>
-      <select name="" id="cohorts-select">
-      </select>
-      <section id="data"></section>
-    </div>
-    <script src="data.js"></script>
-    <script src="main.js"></script>
-  </body>
+    <br>
+    <br>
+    <button type="button" id="button-home">INGRESAR</button>
+  </div>
+  <br>
+  <div id="menu-page">
+    <br>
+    <br>
+    <img src="../Images/directorio.jpg" width="300px" height="200px" class="image">
+    <br>
+    <img src="../Images/preadmision.jpg" width="300px" height="200px" class="image">
+    <br>
+    <br>
+    <button id="button-cohorts">Cohorts</button>
+    <button id="button-students">Estudiantes</button>
+  </div>
+  <div id="cohorts-page">
+    <br>
+    <br>
+    <select name="" id="countries">
+    </select>
+    <select name="" id="cohorts-select">
+    </select>
+    
+    <table id="data">
+    </table>
+
+  </div>
+  <script src="data.js"></script>
+  <script src="main.js"></script>
+</body>
+
 </html>
