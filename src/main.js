@@ -2,18 +2,18 @@ const welcomePage = document.getElementById('welcome-page');
 const buttonHome = document.getElementById('button-home');
 const menuPage = document.getElementById('menu-page');
 const cohortsPage = document.getElementById('cohorts-page');
-const buttonCohorts = document.getElementById('button-cohorts');
 const countriesSelect = document.getElementById("countries");
 const cohortsSelect = document.getElementById("cohorts-select");
 const dataSection = document.getElementById('data');
+const nombreUsuarios = document.getElementById('nombre')
+const searchaa = document.getElementById("busqueda");
+const orderByu = document.getElementById("orderBy");
+const orderDirectionu= document.getElementById("orderDirection")
 buttonHome.addEventListener('click', () => {
-  menuPage.style.display = 'block';
+
   welcomePage.style.display = 'none';
   document.body.style.backgroundColor = 'rgba(150, 159, 170, 0.28)';
   document.body.style.backgroundImage = 'none';
-})
-buttonCohorts.addEventListener('click', () => {
-  menuPage.style.display = 'none';
   cohortsPage.style.display = 'block';
 })
 const datafile1 = '../data/cohorts.json'
@@ -58,10 +58,9 @@ const SelectSedesCohorts = () => {
     optionSede.setAttributeNode(countriesattr);
     countries.appendChild(optionSede);
   });
-
   countriesSelect.addEventListener('change', (evt) => {
     cohortsSelect.innerHTML = "";
-    const selectcohortpreadmision = cohorts.forEach(cohort => {
+    cohorts.forEach(cohort => {
       if ((cohort.id).split('-', 1) == evt.target.value) {
         cohortsSelect.innerHTML += "<option value=\"" + cohort.id + "\">" + cohort.id + "</option>";
       }
@@ -70,6 +69,8 @@ const SelectSedesCohorts = () => {
   cohortsSelect.addEventListener('change', (evt) => {
     let value = evt.target.value
     if (value == "lim-2018-03-pre-core-pw") {
+      countriesSelect.style.display="none";
+      cohortsSelect.style.display = "none";
       let filterUsers = users.filter(user => (user.role == 'student'));
       let selectedCohort = cohorts.find(cohort => (cohort.id == value));
       let options = {
@@ -77,33 +78,102 @@ const SelectSedesCohorts = () => {
         cohortData: {
           users: filterUsers,
           progress: progress
-          },
-          orderBy :'',
-          orderDirection : 'ASC',
-          search :''
-        
+        },
+        orderBy: "orderByoption",
+        orderDirection: 'ASC ',
+        search: ''
       }
       let usersWithStats = processCohortData(options);
        let template = '';
-      console.log(usersWithStats);
-      template += '<br><tr>'+
-      '<th></th>'+
-      '<th>Ejercicios</th> '
+      template +=
+        '<br><tr>' +
+        '<th>Nombre</th>' +
+        '<th>% total</th> ' +
+        '<th>ejercicios completados</th>' +
+        '<th>% de ejercicios</th>' +
+        '<th>quizzes completados</th>' +
+        '<th>% de quizzes</th>' +
+        '<th>lecturas completadas</th>' +
+        '<th>% de lecturas</th>'
       '</tr>'
-        template += 
-        '<br><tr>'+
-          '<th>Nombre</th>'+
-          '<th>completados</th> '+   
-          '<th>Porcentaje de <br> completitud</th>'
-          '</tr>'
       usersWithStats.forEach(ele => {
-      template += '<tr>';
-      template += `<td>${ele.name}</td>`
-      template += `<td>${ele.stats.exercises.completed}</td>`
-      template += `<td>${ele.stats.exercises.percent}</td>`
-      
+        template += '<tr>';
+        template += `<td>${ele.name}</td>`
+        template += `<td>${ele.stats.percent}</td>`
+        template += `<td>${ele.stats.exercises.completed}</td>`
+        template += `<td>${ele.stats.exercises.percent}</td>`
+        template += `<td>${ele.stats.quizzes.completed}</td>`
+        template += `<td>${ele.stats.quizzes.percent}</td>`
+        template += `<td>${ele.stats.reads.completed}</td>`
+        template += `<td>${ele.stats.reads.percent}</td>`
       })
       dataSection.innerHTML = template;
+      searchaa.addEventListener('keyup', () => {
+        options.search = searchaa.value;
+        let usersWithStats = processCohortData(options);
+        let template = '';
+        template +=
+        '<br><tr>' +
+        '<th>Nombre</th>' +
+        '<th>% total</th> ' +
+        '<th>ejercicios completados</th>' +
+        '<th>% de ejercicios</th>' +
+        '<th>quizzes completados</th>' +
+        '<th>% de quizzes</th>' +
+        '<th>lecturas completadas</th>' +
+        '<th>% de lecturas</th>'
+      '</tr>'
+        usersWithStats.forEach(ele => {
+          if (ele.stats) {
+            template += '<tr>';
+            template += `<td>${ele.name}</td>`
+            template += `<td>${ele.stats.percent}</td>`
+            template += `<td>${ele.stats.exercises.completed}</td>`
+            template += `<td>${ele.stats.exercises.percent}</td>`
+            template += `<td>${ele.stats.quizzes.completed}</td>`
+            template += `<td>${ele.stats.quizzes.percent}</td>`
+            template += `<td>${ele.stats.reads.completed}</td>`
+            template += `<td>${ele.stats.reads.percent}</td>`
+          }
+        })
+        dataSection.innerHTML = template;
+      })
+      
+      orderByu.addEventListener('change', () => {
+        orderDirectionu.addEventListener('change', () => {
+          options.orderBy = orderByu.value;
+          options.orderDirection = orderDirectionu.value;
+          let usersWithStats = processCohortData(options);
+          let template = '';
+          console.log(usersWithStats);
+          template +=
+          '<br><tr>' +
+          '<th>Nombre</th>' +
+          '<th>% total</th> ' +
+          '<th>ejercicios completados</th>' +
+          '<th>% de ejercicios</th>' +
+          '<th>quizzes completados</th>' +
+          '<th>% de quizzes</th>' +
+          '<th>lecturas completadas</th>' +
+          '<th>% de lecturas</th>'
+        '</tr>'
+        usersWithStats.forEach(ele => {
+            if (ele.stats) {
+              template += '<tr>';
+            template += `<td>${ele.name}</td>`
+            template += `<td>${ele.stats.percent}</td>`
+            template += `<td>${ele.stats.exercises.completed}</td>`
+            template += `<td>${ele.stats.exercises.percent}</td>`
+            template += `<td>${ele.stats.quizzes.completed}</td>`
+            template += `<td>${ele.stats.quizzes.percent}</td>`
+            template += `<td>${ele.stats.reads.completed}</td>`
+            template += `<td>${ele.stats.reads.percent}</td>`
+            }
+          })
+          dataSection.innerHTML = template;
+        })
+
+      })
     }
     else {
       alert("no hay datos");

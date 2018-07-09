@@ -8,34 +8,37 @@
   <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css?family=Varela Round" rel="stylesheet" />
 </head>
+
 <body>
   <div id="welcome-page">
     <h1>Laboratoria Progress</h1>
-    <br>
-    <br>
-    <br>
+    <br><br><br>
     <button type="button" id="button-home">INGRESAR</button>
   </div>
   <br>
-  <div id="menu-page">
-    <br>
-    <br>
-    <img src="../Images/directorio.jpg" width="300px" height="200px" class="image">
-    <br>
-    <img src="../Images/preadmision.jpg" width="300px" height="200px" class="image">
-    <br>
-    <br>
-    <button id="button-cohorts">Cohorts</button>
-    <button id="button-students">Estudiantes</button>
-  </div>
   <div id="cohorts-page">
-    <br>
     <br>
     <select name="" id="countries">
     </select>
     <select name="" id="cohorts-select">
     </select>
-    
+    <br>
+    <br>
+    <input type="text" id="busqueda" placeholder="Search..">
+    <select name="" id="orderBy">
+      <option value="orderByoption">ordernar por</option>
+      <option value="name">nombre</option>
+      <option value="percent">porcentaje total</option>
+      <option value="completedexercises"> ejercicicio completados</option>
+      <option value="completedquizzes">quizzes completados</option>
+      <option value="scorequizzes">puntaje quizzes</option>
+      <option value="completedreads"> lecturas completados</option>
+    </select>
+    <select name="" id="orderDirection">
+      <option>ordernar por</option>
+      <option value="ASC">Ascendente</option>
+      <option value="DESC">Descendente</option>
+    </select>
     <table id="data">
     </table>
 
