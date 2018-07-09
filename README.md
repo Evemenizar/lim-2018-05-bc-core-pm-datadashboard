@@ -29,12 +29,7 @@ estudiante en su proceso de aprendizaje.
 ## Encuesta
 
 Decidimos comenzar realizando una encuesta a las Training Managers, para obtener la información necesaria sobre sus necesidades a la hora de ver el historial de una alumna.
-<<<<<<< HEAD
-
-https://goo.gl/forms/bQ4w2lrQ72nYa6FQ2
-=======
  [Encuesta](https://goo.gl/forms/bQ4w2lrQ72nYa6FQ2)
->>>>>>> 6b398157fa70708ef536d447d5d43ec8a19a60e6
 
 Usuario 1
 
@@ -47,26 +42,15 @@ Usuario 2
 ## Sketch
 Luego de una encuesta previa procedimos a realizar un sketch a mano alzada de lo que sería el producto.
 
-<<<<<<< HEAD
-Luego de una encuesta previa procedimos a realizar un sketch a mano alzada de lo que sería el producto.
-=======
->>>>>>> 6b398157fa70708ef536d447d5d43ec8a19a60e6
+
 
 ![sketch1](documentacion/sketch/sketch1.jpg)
 
 Teniendo los sketchs ya mencionados, creimos conveniente realizar una segunda entrevista para mejorar el prototipo y estar mas cerca a lo que las TMs requerían de una interfaz, y esto fue lo que nos dijo:
 
-<<<<<<< HEAD
 ![entrevista](documentacion/entrevista/entrevista.PNG)
 
 De acuerdo a esta última entrevista, procedimos a realizar un segundo sketch. 
-=======
-
-![entrevista](documentacion/entrevista/entrevista.PNG)
-
-
-De acuerdo a esta última entrevista, procedimos a realizar un segundo sketch.
->>>>>>> 6b398157fa70708ef536d447d5d43ec8a19a60e6
 
 ![sketch2](documentacion/sketch/sketch2.jpg)
 
@@ -98,12 +82,7 @@ Cada una de estas opciones a su vez tendrían filtros como: sede, generación y 
 
 ## Prototipo
 
-<<<<<<< HEAD
 Una vez obtenido los sketchs finales, elaboramos muestro prototipo usando la plataforma de diseño https://marvelapp.com/ .
-=======
-Una vez obtenido los sketchs finales, elaboramos muestro prototipo usando la plataforma de diseño 
- [Marvel app](https://marvelapp.com/)
->>>>>>> 6b398157fa70708ef536d447d5d43ec8a19a60e6
 
 ![1](documentacion/prototipoimagenes/1.png)
 
