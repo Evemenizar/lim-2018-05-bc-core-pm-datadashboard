@@ -42,8 +42,6 @@ Usuario 2
 ## Sketch
 Luego de una encuesta previa procedimos a realizar un sketch a mano alzada de lo que sería el producto.
 
-
-
 ![sketch1](documentacion/sketch/sketch1.jpg)
 
 Teniendo los sketchs ya mencionados, creimos conveniente realizar una segunda entrevista para mejorar el prototipo y estar mas cerca a lo que las TMs requerían de una interfaz, y esto fue lo que nos dijo:
@@ -57,17 +55,6 @@ De acuerdo a esta última entrevista, procedimos a realizar un segundo sketch.
 ## Conclusiones
 
 Concluimos que las usuarias (TMs), necesitaban una interfaz que les permita ver a detalle el historial de progreso de las alumnas de manera puntual y visualmente claro. Por ello se decidió hacer un menú con tres botones:
-
-* Directorio, donde iría la información de todas las alumnas en general.
-* Pre-admisión, como el nombre lo dice aqui iría solo información de alumnas de pre-admision.
-* Bootcamp, al igual que en el de pre-admnisión aqui iría información de alumnas de bootcamp.
-
-Cada una de estas opciones a su vez tendrían filtros como: sede, generación y orden alfabetico, que permitirían una busqueda más eficaz con respecto al progreso de una alumna.
-
-
-## Conclusiones
-
-Concluimos que las usuarias (TMs), necesitaban una interfaz que les permita ver a detalle el historial de progreso de las alumnas de manera puntual y visualmente claro. Por ello se decidió hacer un menú con tres botones: 
 
 * Directorio, donde iría la información de todas las alumnas en general.
 * Pre-admisión, como el nombre lo dice aqui iría solo información de alumnas de pre-admision.
