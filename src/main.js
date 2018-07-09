@@ -138,7 +138,6 @@ const SelectSedesCohorts = () => {
         })
         dataSection.innerHTML = template;
       })
-      
       orderByu.addEventListener('change', () => {
         orderDirectionu.addEventListener('change', () => {
           options.orderBy = orderByu.value;
