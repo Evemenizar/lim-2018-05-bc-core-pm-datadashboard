@@ -10,7 +10,6 @@ const searchaa = document.getElementById("busqueda");
 const orderByu = document.getElementById("orderBy");
 const orderDirectionu= document.getElementById("orderDirection")
 buttonHome.addEventListener('click', () => {
-
   welcomePage.style.display = 'none';
   document.body.style.backgroundColor = 'rgba(150, 159, 170, 0.28)';
   document.body.style.backgroundImage = 'none';
