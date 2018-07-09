@@ -29,8 +29,12 @@ estudiante en su proceso de aprendizaje.
 ## Encuesta
 
 Decidimos comenzar realizando una encuesta a las Training Managers, para obtener la información necesaria sobre sus necesidades a la hora de ver el historial de una alumna.
+<<<<<<< HEAD
 
 https://goo.gl/forms/bQ4w2lrQ72nYa6FQ2
+=======
+ [Encuesta](https://goo.gl/forms/bQ4w2lrQ72nYa6FQ2)
+>>>>>>> 6b398157fa70708ef536d447d5d43ec8a19a60e6
 
 Usuario 1
 
@@ -41,18 +45,40 @@ Usuario 2
 ![usuario2](documentacion/Encuesta/usuario2.PNG)
 
 ## Sketch
-
 Luego de una encuesta previa procedimos a realizar un sketch a mano alzada de lo que sería el producto.
+
+<<<<<<< HEAD
+Luego de una encuesta previa procedimos a realizar un sketch a mano alzada de lo que sería el producto.
+=======
+>>>>>>> 6b398157fa70708ef536d447d5d43ec8a19a60e6
 
 ![sketch1](documentacion/sketch/sketch1.jpg)
 
 Teniendo los sketchs ya mencionados, creimos conveniente realizar una segunda entrevista para mejorar el prototipo y estar mas cerca a lo que las TMs requerían de una interfaz, y esto fue lo que nos dijo:
 
+<<<<<<< HEAD
 ![entrevista](documentacion/entrevista/entrevista.PNG)
 
 De acuerdo a esta última entrevista, procedimos a realizar un segundo sketch. 
+=======
+
+![entrevista](documentacion/entrevista/entrevista.PNG)
+
+
+De acuerdo a esta última entrevista, procedimos a realizar un segundo sketch.
+>>>>>>> 6b398157fa70708ef536d447d5d43ec8a19a60e6
 
 ![sketch2](documentacion/sketch/sketch2.jpg)
+
+## Conclusiones
+
+Concluimos que las usuarias (TMs), necesitaban una interfaz que les permita ver a detalle el historial de progreso de las alumnas de manera puntual y visualmente claro. Por ello se decidió hacer un menú con tres botones:
+
+* Directorio, donde iría la información de todas las alumnas en general.
+* Pre-admisión, como el nombre lo dice aqui iría solo información de alumnas de pre-admision.
+* Bootcamp, al igual que en el de pre-admnisión aqui iría información de alumnas de bootcamp.
+
+Cada una de estas opciones a su vez tendrían filtros como: sede, generación y orden alfabetico, que permitirían una busqueda más eficaz con respecto al progreso de una alumna.
 
 
 ## Conclusiones
@@ -72,17 +98,20 @@ Cada una de estas opciones a su vez tendrían filtros como: sede, generación y 
 
 ## Prototipo
 
+<<<<<<< HEAD
 Una vez obtenido los sketchs finales, elaboramos muestro prototipo usando la plataforma de diseño https://marvelapp.com/ .
+=======
+Una vez obtenido los sketchs finales, elaboramos muestro prototipo usando la plataforma de diseño 
+ [Marvel app](https://marvelapp.com/)
+>>>>>>> 6b398157fa70708ef536d447d5d43ec8a19a60e6
 
 ![1](documentacion/prototipoimagenes/1.png)
 
 
-https://marvelapp.com/dd994i9 
+ [Prototipo](https://marvelapp.com/dd994i9)
 
-
-
-
- 
 ## Elaborado por:
 
 Sandra Ortiz y Evelyn Meniz
+
+

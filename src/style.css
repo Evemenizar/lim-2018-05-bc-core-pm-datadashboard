@@ -1,36 +1,88 @@
 header{ 
     display: flex;
     background: #313533;
-    height: 50px;
-    padding: 40px;
+    position: fixed;
+    padding: 20px;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+    -o-transition: all 200ms ease;
+    transition: all 200ms ease;
 }
+
 body{
-    background-color: #c4c5c6;
-    /* background: url(../images/woman_tech.jpg);
+    background-image: url("../Images/woman_tech.jpg") ; 
     background-size: cover;
-    background-repeat: no-repeat; */  
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    margin: 0;
+    padding: 0;
+}  
+
+#data {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    width: 100%;
 }
-#start{
-  /*  padding: 100px;
-    margin: 100px; */
-    float: left; 
+#datas td, #data th {
+    border: 1px solid #ddd;
+    padding: 8px;
 }
-#start button{
+#data th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color:#313533 ;
+    color: white;
+}
+.image {
+    float: left;  
+    padding: 10px;
+    display: block;
+    padding: 65px;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+h1{
+   color: #FFE50E;
+}
+#welcome-page{
+   width: 360px;
+   border-radius: 3px;
+   margin: 200px auto;
+}
+#welcome-page h1{
+    max-width: 960px;
+    position: absolute;
+    top: 200;
+    left: 70;
+}
+#head {
+    display: none;
+}
+#menu-page{
+    display: none;
+}
+#cohorts-page{
+    display: none;
+}
+button{
+    border: none;
     padding: 15px 32px;
     display: inline-block;
     font-size: 16px;
     margin: 4px 2px;
     cursor: pointer;
-    background-color: transparent;
-    text-align: center;
-    border: 1px solid #ffc107;
-    color: #ffc107;
 }
-#studentPage{
-    font-family: "varela round";
-    font-size: 12px;
-    padding-left: 30px;
-    display: none;
+#button-cohorts{
+    width: 300px;
+    height: 40px;
+    display: inline-block;
 }
-/*
-#969FAA;
+#button-students{
+    width: 300px;
+    height: 40px;
+    display: inline-block;
+}
+

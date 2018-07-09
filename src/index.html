@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+<<<<<<< HEAD
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -43,3 +44,53 @@
     <script src="main.js"></script>
   </body>
 </html>
+=======
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Data Dashboard</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css?family=Varela Round" rel="stylesheet" />
+</head>
+
+<body>
+  <div id="welcome-page">
+    <h1>Laboratoria Progress</h1>
+    <br><br><br>
+    <button type="button" id="button-home">INGRESAR</button>
+  </div>
+  <br>
+  <div id="cohorts-page">
+    <br>
+    <select name="" id="countries">
+    </select>
+    <select name="" id="cohorts-select">
+    </select>
+    <br>
+    <br>
+    <input type="text" id="busqueda" placeholder="Search..">
+    <select name="" id="orderBy">
+      <option value="orderByoption">ordernar por</option>
+      <option value="name">nombre</option>
+      <option value="percent">porcentaje total</option>
+      <option value="completedexercises"> ejercicicio completados</option>
+      <option value="completedquizzes">quizzes completados</option>
+      <option value="scorequizzes">puntaje quizzes</option>
+      <option value="completedreads"> lecturas completados</option>
+    </select>
+    <select name="" id="orderDirection">
+      <option>ordernar por</option>
+      <option value="ASC">Ascendente</option>
+      <option value="DESC">Descendente</option>
+    </select>
+    <table id="data">
+    </table>
+
+  </div>
+  <script src="data.js"></script>
+  <script src="main.js"></script>
+</body>
+
+</html>
+>>>>>>> 6b398157fa70708ef536d447d5d43ec8a19a60e6
