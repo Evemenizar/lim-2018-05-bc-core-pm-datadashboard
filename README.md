@@ -69,7 +69,7 @@ Cada una de estas opciones a su vez tendrían filtros como: sede, generación y 
 
 ## Prototipo
 
-Una vez obtenido los sketchs finales, elaboramos muestro prototipo usando la plataforma de diseño https://marvelapp.com/ .
+Una vez obtenido los sketchs finales, elaboramos muestro prototipo usando la plataforma de diseño [Marvel App](https://marvelapp.com/).
 
 ![1](documentacion/prototipoimagenes/1.png)
 
