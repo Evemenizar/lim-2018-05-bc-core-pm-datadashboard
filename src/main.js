@@ -174,7 +174,7 @@ const SelectSedesCohorts = () => {
       })
     }
     else {
-      alert("no hay datos");
+      alert("no hay  datos");
     }
   });
 
