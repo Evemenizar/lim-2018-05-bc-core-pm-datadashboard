@@ -1,15 +1,68 @@
-header{ 
-    display: flex;
+#cont-header{ 
+    display: none;
     background: #313533;
     height: 50px;
     padding: 40px;
 }
-body{
-    background-color: #c4c5c6;
-    /* background: url(../images/woman_tech.jpg);
-    background-size: cover;
-    background-repeat: no-repeat; */  
+.imgUser{
+    float: right;
 }
+body{
+    background-image: url("../Images/woman_tech.jpg") ; 
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    margin: 0;
+    padding: 0; 
+    font-family: "varela round";
+}
+h1{
+    color: #FFE50E;
+ }
+ #welcome-page{
+    width: 360px;
+    border-radius: 3px;
+    margin: 200px auto;
+ }
+ #welcome-page h1{
+     max-width: 960px;
+     top: 200;
+     left: 70;
+     font-size: 45px;
+     margin: 15px;
+ }
+ #welcome-page button{
+    border: none;
+    padding: 10px 20px;
+    display: inline-block;
+    font-size: 14px;
+    margin: 4px 2px;
+    cursor: pointer;
+    background: #FFE50E;
+ }
+ #cohorts-page{
+    display: none;
+}
+/*button{
+    border: none;
+    padding: 15px 32px;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+#button-cohorts{
+    width: 300px;
+    height: 40px;
+    display: inline-block;
+}
+#button-students{
+    width: 300px;
+    height: 40px;
+    display: inline-block;
+}
+/*
 #start{
     padding: 100px;
     margin: 100px;
@@ -33,26 +86,6 @@ body{
     padding-left: 30px;
     display: none;
 }
-#filSede{
-    float: left;
-    font-family: "varela round";
-    font-size: 12px;
-    padding: 80px;
-    display: none;
-}
-#filGeneration{
-    float: left;
-    font-family: "varela round";
-    font-size: 12px;
-    padding: 80px;
-    display: none;
-}
-#filAlphabet{
-    float: left;
-    font-family: "varela round";
-    font-size: 12px;
-    padding: 80px;
-    display: none;
-}
-/*
-#969FAA;
+
+
+

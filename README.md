@@ -1,4 +1,4 @@
-#  Laboratoria progress
+#  Data Dashboard - Laboratoria progress
 
   Laboratoria progress es una interfaz diseñada para las Training Managers. Esta aplicación permitirá visualizar el progreso de las alumnas de Laboratoria el cual sera de gran utilidad para que las TMs tengan una vista a detalle de cada alumna.
 
@@ -72,17 +72,14 @@ Cada una de estas opciones a su vez tendrían filtros como: sede, generación y 
 
 ## Prototipo
 
-Una vez obtenido los sketchs finales, elaboramos muestro prototipo usando la plataforma de diseño https://marvelapp.com/ .
+Una vez obtenido los sketchs finales, elaboramos muestro prototipo usando la plataforma de diseño [Marvel App](https://marvelapp.com/).
 
 ![1](documentacion/prototipoimagenes/1.png)
 
 
-https://marvelapp.com/dd994i9 
-
-
-
+[Prototipo](https://marvelapp.com/dd994i9)
 
  
 ## Elaborado por:
 
-Sandra Ortiz y Evelyn Meniz
+Evelyn Meniz

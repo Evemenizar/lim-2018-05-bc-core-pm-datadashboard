@@ -1,23 +1,74 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Data Dashboard</title>
-    <link rel="stylesheet" href="style.css" />
-    <link href="https://fonts.googleapis.com/css?family=Varela Round" rel="stylesheet"/>
-  </head>
-  <body> 
-    <header id='head'>
-       <img src="../Images/logo_laboratoria_blanco.png" width="130px" height= "35px">
-    </header>
-    <div id="welcome-page">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Data Dashboard</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css?family=Varela Round" rel="stylesheet" />
+</head>
+
+<body>
+  <div id="cont-header">
+    <img class="imgLogp" src="../Images/logo_laboratoria_blanco.png" width="130px" height="35px">
+    <img class="imgUser" src="../Images/usuarix.png" width="45px" height="45px">
+  </div>
+  <div id="welcome-page">
+    <form name="form" method="post">
       <h1>Laboratoria Progress</h1>
-      <br><br><br>
-      <button type="button" id="button-home">INGRESAR</button>
-    </div>
+      <br>
+      <input type="text" name="login" id="login-text" placeholder="Usuario">
+      <br>
+      <br>
+      <input type="password" name="password" id="login-password" placeholder="Contraseña">
+      <br>
+      <br>
+      <br>
+      <button type="button" value="ingresar" id="button-home">INGRESAR</button>
+      <br>
+      <br>
+      <br>
+    </form>
+  </div>
+  <br>
+
+  <div id="cohorts-page">
     <br>
-    <div id="menu-page">
+    <br>
+    <select name="" id="countries">
+    </select>
+    <select name="" id="cohorts-select">
+    </select>
+  </div>
+
+  <input type="text" id="search" placeholder="Search..">
+
+  <select name="" id="filterBy">
+    <option value="orderByoption">Filtrar por</option>
+    <option value="name">Nombre</option>
+    <option value="percent">Porcentaje total</option>
+    <option value="completedexercises"> Ejercicicios completados</option>
+    <option value="completedquizzes">Quizzes completados</option>
+    <option value="scorequizzes">Puntaje quizzes</option>
+    <option value="completedreads"> Lecturas completados</option>
+  </select>
+
+  <select name="" id="orderDirection">
+    <option>Ordenar por</option>
+    <option value="ASC">Ascendente</option>
+    <option value="DESC">Descendente</option>
+  </select>
+
+  <table id="data"></table>
+
+  <script src="data.js"></script>
+  <script src="main.js"></script>
+</body>
+
+</html>
+
+<!--  <div id="menu-page">
         <br><br>
         <img src="../Images/directorio.jpg" width="300px" height="200px" class="image">
         <br>
@@ -26,36 +77,3 @@
        <button id="button-cohorts">Cohorts</button>
        <button id="button-students">Estudiantes</button>
     </div>
-    <div id="cohorts-page">
-    <br><br>
-      <select name="" id="countries">
-      </select>
-      <select name="" id="cohorts-select">
-      </select>
-      <section id="data"></section>
-    </div>
-    
-    <div id="filGeneration">
-      <h2>Generación:</h2>
-      <select class="generation">
-          <option value="Lim-2018-I">Lim-2018-I</option>
-          <option value="Lim-2017-II">Lim-2017-II</option>
-          <option value="Lim-2017-I">Lim-2017-I</option>
-          <option>Sp-2018-I</option>
-          <option>Sp-2017-II</option>
-          <option>Sp-2017-I</option>
-      </select>
-    </div>
-
-        <div id="filAlphabet">
-          <h2>Orden alfabetico:</h2>
-          <select class="oAlfabet">
-            <option value="ascendente">Ascendente</option>
-            <option value="descendente">Descendente</option>
-          </select>
-          </div>
-
-    <script src="data.js"></script>
-    <script src="main.js"></script>
-  </body>
-</html>
