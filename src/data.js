@@ -86,25 +86,43 @@ window.computeUsersStats = (users, progress, courses) => {
     })
     return users;
 }
-
-
 window.sortUsers = (users, orderBy, orderDirection) => {
-}
-window.filterUsers = (users, search) => {
-    if (search) {
-        if (users) {
-            search = search.toLowerCase();
-            return users.filter(user => user && user.name && user.name.toLowerCase().indexOf(search) >= 0);
+    let sortedUsers = users;
+    if (orderDirection.length !== 0) {
+        sortedUsers = users.sort((one, two) => {
+            if (orderBy === "name") {
+                let compareName = one.name.compareLocal(two.name);
+                return compareName;
+            } else if (orderBy === "percent") {
+                if (one.stats[orderBy] > two.stats[orderBy]) return 1;
+                if (one.stats[orderBy] < two.stats[orderBy]) return -1;
+                return 0;
+            } else if (orderBy === "exercises" || orderBy === "quizzes" || orderBy === "reads") {
+                if (one.stats[orderBy].percent > two.stats[orderBy].percent) return 1;
+                if (one.stats[orderBy].percent < two.stats[orderBy].percent) return -1;
+                return 0;
+            } else if (orderBy === "scoreSum" || orderBy === "scoreAvg") {
+                if (one.stats.quizzes[orderBy] > two.stats.quizzes[orderBy]) return 1;
+                if (one.stats.quizzes[orderBy] < two.stats.quizzes[orderBy]) return -1;
+                return 0;
+            }
+        })
+        if (orderDirection === "DESC") {
+            sortedUsers = sortedUsers.reverse();
         }
     }
-    return users;
+    return sortedUsers;
 }
-
-
+window.filterUsers = (users, search) => {
+    let userFilter = users;
+    search = search.toLowerCase();
+    userFilter = users.filter(user => user.name.toLowerCase().indexOf(search) >= 0)
+    return userFilter;
+}
 window.processCohortData = (options) => {
     let coursesCohort = Object.keys(options.cohort.coursesIndex);
     let computedUsers = computeUsersStats(options.cohortData.users, options.cohortData.progress, coursesCohort);
     let usersSort = sortUsers(usersStats, options.orderBy, options.orderDirection);
-    let filter = filterUsers(orderUsers, options.search);
-    return filter;
+    let userFilter = filterUsers(orderUsers, options.search);
+    return userFilter;
 }

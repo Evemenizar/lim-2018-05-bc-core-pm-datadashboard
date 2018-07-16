@@ -24,7 +24,7 @@ estudiante en su proceso de aprendizaje.
 
 
 
-##  Proceso de creacion de Laboratoria progress.
+##  Proceso de creación de Laboratoria progress.
 
 ## Encuesta
 

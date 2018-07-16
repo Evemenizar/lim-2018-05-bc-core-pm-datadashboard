@@ -2,7 +2,7 @@ let welcomePage = document.getElementById('welcome-page');
 let buttonHome = document.getElementById('button-home');
 let cohortsPage = document.getElementById('cohorts-page');
 let countriesSelect = document.getElementById('countries');
-let cohortsSelect = document.getElementById('cohorts-select');
+let cohortsSelect = document.getElementById('cohorts');
 let contHeader = document.getElementById('cont-header');
 let studentTable = document.getElementById('student-table');
 let searchStudent = document.getElementById('search');
@@ -27,7 +27,7 @@ const options = {
   orderDirection: '',
   search: ''
 }
-cohortSede = (arrSedes) => {
+getData = (arrSedes) => {
   let template = '';
   template +=
     `<tr>                                                  
@@ -66,7 +66,7 @@ countriesSelect.addEventListener('change', () => {
         const cohortSplit = usersCohort.split('-');
         if (cohortSplit[0] === countriesSelect.value) {
           template +=
-            `<option>Sedes</option>
+            `<option>cohorts</option>
           <option value =${cohortsSelect}>${cohortsSelect}</option>`;
         }
       }
@@ -76,8 +76,8 @@ countriesSelect.addEventListener('change', () => {
 cohortsSelect.addEventListener('change', () => {
   fetch('../data/cohorts.json')
     .then(response => response.json())
-    .then(selectsCohorts => {
-      selectsCohorts.forEach(objCohorSelect => {
+    .then(selectedCohort => {
+      selectedCohort.forEach(objCohorSelect => {
         if (objCohorSelect.id === cohortsSelect.value) {
           options.cohort = objCohorSelect;
         }
@@ -92,22 +92,22 @@ cohortsSelect.addEventListener('change', () => {
           options.cohortData.users = arrUsers;
           options.cohortData.progress = objProgress;
           let usersWithStats = processCohortData(options);
-          tableStudent.innerHTML = cohortSede(usersWithStats);
+          tableStudent.innerHTML = getData(usersWithStats);
         })
     })
 })
 searchStudent.addEventListener('keyup', () => {
   options.search = searchStudent.value;
   let usersWithStats = processCohortData(options);
-  tableStudent.innerHTML = cohortSede(usersWithStats);
+  tableStudent.innerHTML = getData(usersWithStats);
 })
 orderBy.addEventListener('change', () => {
   options.orderBy = orderBy.value;
   let usersWithStats = processCohortData(options);
-  tableStudent.innerHTML = cohortSede(usersWithStats);
+  tableStudent.innerHTML = getData(usersWithStats);
 })
 orderDirection.addEventListener('change', () => {
   options.orderDirection = orderDirection.value;
   let usersWithStats = processCohortData(options);
-  tableStudent.innerHTML = cohortSede(usersWithStats);
+  tableStudent.innerHTML = getData(usersWithStats);
 })
