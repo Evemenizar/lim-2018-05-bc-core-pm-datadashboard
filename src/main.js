@@ -16,6 +16,7 @@ buttonHome.addEventListener('click', () => {
   document.body.style.backgroundImage = "none";
   contHeader.style.display = "block";
   cohortsPage.style.display = "block";
+  
 })
 const options = {
   cohort: null,
@@ -65,8 +66,7 @@ countriesSelect.addEventListener('change', () => {
         const cohortSplit = usersCohort.split('-');
         if (cohortSplit[0] === countriesSelect.value) {
           template +=
-            `<option>cohorts</option>
-          <option value =${cohortsSelect}>${cohortsSelect}</option>`;
+            `<option value =${usersCohort}>${usersCohort}</option>`;
         }
       }
       cohortsSelect.innerHTML = template;
@@ -79,7 +79,7 @@ cohortsSelect.addEventListener('change', () => {
       selectedCohort.forEach(objCohorSelect => {
         if (objCohorSelect.id === cohortsSelect.value) {
           options.cohort = objCohorSelect;
-        }
+        };
       });
     })
   fetch(`../data/cohorts/${cohortsSelect.value}/users.json`)

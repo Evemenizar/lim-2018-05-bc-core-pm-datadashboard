@@ -21,8 +21,10 @@ window.computeUsersStats = (users, progress, courses) => {
                     partsUnits.forEach(part => {
                         if (part.type === 'read') {
                             readsTotal++;
-                            if (part.completed === 1) {
+                            if (part.completed === 1){
                                 readsCompleted++;
+                                console.log(partsUnits);
+                                
                             }
                         }
                         if (part.type === 'practice' && part.hasOwnProperty("exercises")) {
@@ -32,7 +34,8 @@ window.computeUsersStats = (users, progress, courses) => {
                             exercisesCompleted += part.completed;
                         }
                         if (part.type === 'quiz') {
-                            quizzesTotals++;
+                            quizzesTotal++;
+                            console.log(quizzesTotal);
                             if (part.completed === 1 && part.hasOwnProperty("score")) {
                                 quizzesCompleted++;
                                 quizzesScoreSum += part.score;

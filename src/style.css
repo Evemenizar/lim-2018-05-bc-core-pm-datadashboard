@@ -4,6 +4,7 @@
     height: 50px;
     padding: 40px;
 }
+
 .imgUser{
     float: right;
 }
@@ -48,49 +49,13 @@ body{
  }
  #cohorts-page{
     display: none;
+    margin: 3%;
 }
-/*button{
-    border: none;
-    padding: 15px 32px;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    cursor: pointer;
+#search{
+    float: right;
 }
-#button-cohorts{
-    width: 300px;
-    height: 40px;
-    display: inline-block;
+#cohorts-page h2{
+    font-size: 25px;
 }
-#button-students{
-    width: 300px;
-    height: 40px;
-    display: inline-block;
-}
-/*
-#start{
-    padding: 100px;
-    margin: 100px;
-    
-}
-#start button{
-    padding: 15px 32px;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    cursor: pointer;
-    background-color: transparent;
-    text-align: center;
-    border: 1px solid #ffc107;
-    color: #ffc107;
-  
-}
-#studentPage{
-    font-family: "varela round";
-    font-size: 12px;
-    padding-left: 30px;
-    display: none;
-}
-
 
 
