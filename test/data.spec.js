@@ -58,6 +58,7 @@ describe('data', () => {
           total: 3,
           completed: 2,
           percent: 67,
+          scoreSum: 57,
           scoreAvg: 29,
         });
       });
@@ -75,31 +76,57 @@ describe('data', () => {
   });
 
   describe('sortUsers(users, orderBy, orderDirection)', () => {
-
-    it('debería retornar arreglo de usuarios ordenado por nombre ASC');
-    it('debería retornar arreglo de usuarios ordenado por nombre DESC');
-    it('debería retornar arreglo de usuarios ordenado por porcentaje general ASC');
-    it('debería retornar arreglo de usuarios ordenado por porcentaje general DESC');
-    it('debería retornar arreglo de usuarios ordenado por ejercicios completados ASC');
-    it('debería retornar arreglo de usuarios ordenado por ejercicios completados DESC');
-    it('debería retornar arreglo de usuarios ordenado por quizzes completados ASC');
-    it('debería retornar arreglo de usuarios ordenado por quizzes completados DESC');
-    it('debería retornar arreglo de usuarios ordenado por score promedio en quizzes completados ASC');
-    it('debería retornar arreglo de usuarios ordenado por score promedio en quizzes completados DESC');
-    it('debería retornar arreglo de usuarios ordenado por lecturas (reads) completadas ASC');
-    it('debería retornar arreglo de usuarios ordenado por lecturas (reads) completadas DESC');
-
+     const orderUser = fixtures.users;
+    it('debería retornar arreglo de usuarios ordenado por nombre ASC' , () => {
+      assert.equal(sortUsers(users,"name" , "ASC")[0].name , 'adriana vizcarra paitán' );
+    });
+    it('debería retornar arreglo de usuarios ordenado por nombre DESC' , () =>{
+      assert.equal(sortUsers(users,"name" , "DESC")[0].name , 'Zurisadai Rosas Aramburú' );
+    } ) ;
+    it('debería retornar arreglo de usuarios ordenado por porcentaje general ASC' , () => {
+      assert.equal(sortUsers(users,"percent" , "ASC")[0].stats.percent , '0' );
+    } );
+    it('debería retornar arreglo de usuarios ordenado por porcentaje general DESC' , () => {
+      assert.equal(sortUsers(users,"percent" , "DESC")[0].stats.percent , '100' );
+    } );
+    it('debería retornar arreglo de usuarios ordenado por ejercicios completados ASC', () => {
+      assert.equal(sortUsers(users,"completedexercises" , "ASC")[0].stats.exercises.completed , '0' );
+    } );
+    it('debería retornar arreglo de usuarios ordenado por ejercicios completados DESC' , () => {
+      assert.equal(sortUsers(users,"completedexercises" , "DESC")[0].stats.exercises.completed , '2' );
+    }) ;
+    it('debería retornar arreglo de usuarios ordenado por quizzes completados ASC' , () =>{
+      assert.equal(sortUsers(users,"completedquizzes" , "ASC")[0].stats.quizzes.completed , '0' );
+    } );
+    it('debería retornar arreglo de usuarios ordenado por quizzes completados DESC' , () => {
+      assert.equal(sortUsers(users,"completedquizzes" , "DESC")[0].stats.quizzes.completed , '3' );
+    });
+    it('debería retornar arreglo de usuarios ordenado por score promedio en quizzes completados ASC' , () =>{
+      assert.equal(sortUsers(users,"scorequizzes" , "ASC")[0].stats.quizzes.scoreAvg , '0' );
+    } );
+    it('debería retornar arreglo de usuarios ordenado por score promedio en quizzes completados DESC' , () => {
+      assert.equal(sortUsers(users,"scorequizzes" , "DESC")[0].stats.quizzes.scoreAvg , '100' );
+    } );
+    it('debería retornar arreglo de usuarios ordenado por lecturas (reads) completadas ASC' , () =>{
+      assert.equal(sortUsers(users,"completedreads" , "ASC")[0].stats.reads.completed , '0' );
+    } );
+    it('debería retornar arreglo de usuarios ordenado por lecturas (reads) completadas DESC', () => {
+      assert.equal(sortUsers(users,"completedreads" , "DESC")[0].stats.reads.completed , '11' );
+    } );
   });
-
   describe('filterUsers(users, filterBy)', () => {
-
-    it('debería retornar nuevo arreglo solo con usuarios con nombres que contengan string (case insensitive)');
-
+    const users = fixtures.users
+    it('debería retornar nuevo arreglo solo con usuarios con nombres que contengan string (case insensitive)', () => {
+       assert.equal(filterUsers(users , 'maria' )[0].name , 'Maria Rene Ricarda Villegas Diaz'  )
+    });
   });
 
   describe('processCohortData({ cohortData, orderBy, orderDirection, filterBy })', () => {
-
-    it('debería retornar arreglo de usuarios con propiedad stats y aplicar sort y filter');
+           
+    it('debería retornar arreglo de usuarios con propiedad stats y aplicar sort y filter' , ( ) => {
+   
+    } 
+  );
 
   });
 

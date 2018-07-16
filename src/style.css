@@ -16,9 +16,7 @@ body{
     margin: 0;
     padding: 0; 
     font-family: "varela round";
-}
-h1{
-    color: #FFE50E;
+
  }
  #welcome-page{
     width: 360px;
@@ -27,6 +25,7 @@ h1{
  }
  #welcome-page h1{
      max-width: 960px;
+     color: #FFE50E;
      top: 200;
      left: 70;
      font-size: 45px;
@@ -34,12 +33,18 @@ h1{
  }
  #welcome-page button{
     border: none;
-    padding: 10px 20px;
+    padding: 15px 81px;
     display: inline-block;
-    font-size: 14px;
+    font-size: 13px;
     margin: 4px 2px;
     cursor: pointer;
     background: #FFE50E;
+ }
+ #login-text{
+    padding: 10px 30px;
+ }
+ #login-password{
+    padding: 10px 30px;
  }
  #cohorts-page{
     display: none;

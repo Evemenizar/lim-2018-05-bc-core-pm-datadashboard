@@ -10,6 +10,7 @@
 </head>
 
 <body>
+
   <div id="cont-header">
     <img class="imgLogp" src="../Images/logo_laboratoria_blanco.png" width="130px" height="35px">
     <img class="imgUser" src="../Images/usuarix.png" width="45px" height="45px">
@@ -37,43 +38,39 @@
     <br>
     <br>
     <select name="" id="countries">
+      <option value="cohorSede"> Sedes </option>
+      <option value="lim">Lima</option>
+      <option value="cdmx">Ciudad de México</option>
+      <option value="gdl">Guadalajara</option>
+      <option value="scl">Santiago de Chile</option>
     </select>
     <select name="" id="cohorts-select">
     </select>
   </div>
 
-  <input type="text" id="search" placeholder="Search..">
+  <input type="text" id="search" placeholder="Buscar..">
 
-  <select name="" id="filterBy">
+  <select name="" id="order-by">
     <option value="orderByoption">Filtrar por</option>
-    <option value="name">Nombre</option>
-    <option value="percent">Porcentaje total</option>
-    <option value="completedexercises"> Ejercicicios completados</option>
-    <option value="completedquizzes">Quizzes completados</option>
-    <option value="scorequizzes">Puntaje quizzes</option>
-    <option value="completedreads"> Lecturas completados</option>
+    <option value="name"> Nombre </option>
+    <option value="percent"> % Total</option>
+    <option value="exercises"> % Ejercicicios </option>
+    <option value="quizzes"> % Quizzes </option>
+    <option value="scoreSum">Puntaje quizzes</option>
+    <option value="scoreAvg">Promedio quizzes</option>
+    <option value="reads"> % Lecturas </option>
   </select>
 
-  <select name="" id="orderDirection">
+  <select name="" id="order-direction">
     <option>Ordenar por</option>
     <option value="ASC">Ascendente</option>
     <option value="DESC">Descendente</option>
   </select>
 
-  <table id="data"></table>
+  <table id="student-table"></table>
 
   <script src="data.js"></script>
   <script src="main.js"></script>
 </body>
 
 </html>
-
-<!--  <div id="menu-page">
-        <br><br>
-        <img src="../Images/directorio.jpg" width="300px" height="200px" class="image">
-        <br>
-        <img src="../Images/preadmision.jpg" width="300px" height="200px" class="image">
-        <br><br>
-       <button id="button-cohorts">Cohorts</button>
-       <button id="button-students">Estudiantes</button>
-    </div>
