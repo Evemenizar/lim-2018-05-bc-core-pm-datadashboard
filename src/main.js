@@ -17,97 +17,167 @@ buttonHome.addEventListener('click', () => {
   contHeader.style.display = "block";
   cohortsPage.style.display = "block";
 })
-const options = {
-  cohort: null,
-  cohortData: {
-    users: null,
-    progress: null
-  },
-  orderBy: '',
-  orderDirection: '',
-  search: ''
-}
-getData = (arrSedes) => {
-  let template = '';
-  template +=
-    `<tr>                                                  
-    <th> Nombre </th>                                  
-    <th> % Total </th>
-    <th> % Ejercicios </th>
-    <th> % Quizzes </th>
-    <th> Puntaje quizzes </th>
-    <th> Promedio quizzes </th>
-    <th> % Lecturas </th>
-    </tr>`;
-  arrSedes.forEach(students => {
-    if (students.role === "student") {
-      template +=
-        `<tr>
-        <td id= "studentsTable">${students.name}</td>
-        <td>${students.stats.percent}</td> 
-        <td>${students.stats.exercises.percent}</td>
-        <td>${students.stats.quizzes.percent}</td>
-        <td>${students.stats.quizzes.scoreSum}</td>
-        <td>${students.stats.quizzes.scoreAvg}</td>
-        <td>${students.stats.reads.percent}</td>
-        </tr>`;
+const datafile1 = '../data/cohorts.json'
+const datafile2 = '../data/cohorts/lim-2018-03-pre-core-pw/users.json'
+const datafile3 = '../data/cohorts/lim-2018-03-pre-core-pw/progress.json'
+const llamadas = [];
+let cohorts = [];
+let progress = [];
+let users = [];
+llamadas.push(fetch(datafile1));
+llamadas.push(fetch(datafile2));
+llamadas.push(fetch(datafile3));
+Promise.all(llamadas)
+  .then(
+    response => Promise.all(
+      response.map(
+        data => data.text()
+      )
+    )
+  )
+  .then(
+    response => {
+      cohorts = JSON.parse(response[0])
+      users = JSON.parse(response[1])
+      progress = JSON.parse(response[2])
+      SelectSedesCohorts();
     }
-  })
-  return template;
-}
-
-countriesSelect.addEventListener('change', () => {
-  fetch('../data/cohorts.json')
-    .then(response => response.json())
-    .then(myCohorts => {
-      let template = '';
-      for (nameCohort of myCohorts) {
-        const usersCohort = nameCohort.id;
-        const cohortSplit = usersCohort.split('-');
-        if (cohortSplit[0] === countriesSelect.value) {
-          template +=
-            `<option>cohorts</option>
-          <option value =${cohortsSelect}>${cohortsSelect}</option>`;
-        }
+  );
+const SelectSedesCohorts = () => {
+  const sedes = [];
+  cohorts.forEach(cohort => {
+    const sedename = (cohort.id).split('-', 1)[0];
+    if (sedes.indexOf(sedename) < 0) {
+      sedes.push(sedename);
+    }
+  });
+  sedes.forEach(sedename => {
+    const optionSede = document.createElement('OPTION');
+    optionSede.innerHTML = sedename;
+    let countriesattr = document.createAttribute("value");
+    countriesattr.value = sedename;
+    optionSede.setAttributeNode(countriesattr);
+    countries.appendChild(optionSede);
+  });
+  countriesSelect.addEventListener('change', (evt) => {
+    cohortsSelect.innerHTML = "";
+    cohorts.forEach(cohort => {
+      if ((cohort.id).split('-', 1) == evt.target.value) {
+        cohortsSelect.innerHTML += "<option value=\"" + cohort.id + "\">" + cohort.id + "</option>";
       }
-      cohortsSelect.innerHTML = template;
-    })
-})
-cohortsSelect.addEventListener('change', () => {
-  fetch('../data/cohorts.json')
-    .then(response => response.json())
-    .then(selectedCohort => {
-      selectedCohort.forEach(objCohorSelect => {
-        if (objCohorSelect.id === cohortsSelect.value) {
-          options.cohort = objCohorSelect;
-        }
-      });
-    })
-  fetch(`../data/cohorts/${cohortsSelect.value}/users.json`)
-    .then(response => response.json())
-    .then(arrUsers => {
-      fetch(`../data/cohorts/${cohortsSelect.value}/progress.json`)
-        .then(response => response.json())
-        .then(objProgress => {
-          options.cohortData.users = arrUsers;
-          options.cohortData.progress = objProgress;
-          let usersWithStats = processCohortData(options);
-          tableStudent.innerHTML = getData(usersWithStats);
+    });
+  });
+  cohortsSelect.addEventListener('change', (evt) => {
+    let value = evt.target.value
+    if (value == "lim-2018-03-pre-core-pw") {
+      countriesSelect.style.display = "none";
+      cohortsSelect.style.display = "none";
+      let filterUsers = users.filter(user => (user.role == 'student'));
+      let selectedCohort = cohorts.find(cohort => (cohort.id == value));
+      let options = {
+        cohort: selectedCohort,
+        cohortData: {
+          users: filterUsers,
+          progress: progress
+        },
+        orderBy: "orderByoption",
+        orderDirection: 'ASC ',
+        search: ''
+      }
+      let usersWithStats = processCohortData(options);
+      let template = '';
+      template +=
+        '<br><tr>' +
+        '<th>Nombre</th>' +
+        '<th>% total</th> ' +
+        '<th>ejercicios completados</th>' +
+        '<th>% de ejercicios</th>' +
+        '<th>quizzes completados</th>' +
+        '<th>% de quizzes</th>' +
+        '<th>lecturas completadas</th>' +
+        '<th>% de lecturas</th>'
+      '</tr>'
+      usersWithStats.forEach(ele => {
+        template += '<tr>';
+        template += `<td>${ele.name}</td>`
+        template += `<td>${ele.stats.percent}</td>`
+        template += `<td>${ele.stats.exercises.completed}</td>`
+        template += `<td>${ele.stats.exercises.percent}</td>`
+        template += `<td>${ele.stats.quizzes.completed}</td>`
+        template += `<td>${ele.stats.quizzes.percent}</td>`
+        template += `<td>${ele.stats.reads.completed}</td>`
+        template += `<td>${ele.stats.reads.percent}</td>`
+      })
+      dataSection.innerHTML = template;
+      searchaa.addEventListener('keyup', () => {
+        options.search = searchaa.value;
+        let usersWithStats = processCohortData(options);
+        let template = '';
+        template +=
+          '<br><tr>' +
+          '<th>Nombre</th>' +
+          '<th>% total</th> ' +
+          '<th>ejercicios completados</th>' +
+          '<th>% de ejercicios</th>' +
+          '<th>quizzes completados</th>' +
+          '<th>% de quizzes</th>' +
+          '<th>lecturas completadas</th>' +
+          '<th>% de lecturas</th>'
+        '</tr>'
+        usersWithStats.forEach(ele => {
+          if (ele.stats) {
+            template += '<tr>';
+            template += `<td>${ele.name}</td>`
+            template += `<td>${ele.stats.percent}</td>`
+            template += `<td>${ele.stats.exercises.completed}</td>`
+            template += `<td>${ele.stats.exercises.percent}</td>`
+            template += `<td>${ele.stats.quizzes.completed}</td>`
+            template += `<td>${ele.stats.quizzes.percent}</td>`
+            template += `<td>${ele.stats.reads.completed}</td>`
+            template += `<td>${ele.stats.reads.percent}</td>`
+          }
         })
-    })
-})
-searchStudent.addEventListener('keyup', () => {
-  options.search = searchStudent.value;
-  let usersWithStats = processCohortData(options);
-  tableStudent.innerHTML = getData(usersWithStats);
-})
-orderBy.addEventListener('change', () => {
-  options.orderBy = orderBy.value;
-  let usersWithStats = processCohortData(options);
-  tableStudent.innerHTML = getData(usersWithStats);
-})
-orderDirection.addEventListener('change', () => {
-  options.orderDirection = orderDirection.value;
-  let usersWithStats = processCohortData(options);
-  tableStudent.innerHTML = getData(usersWithStats);
-})
+        dataSection.innerHTML = template;
+      })
+      orderByu.addEventListener('change', () => {
+        orderDirectionu.addEventListener('change', () => {
+          options.orderBy = orderByu.value;
+          options.orderDirection = orderDirectionu.value;
+          let usersWithStats = processCohortData(options);
+          let template = '';
+          console.log(usersWithStats);
+          template +=
+            '<br><tr>' +
+            '<th>Nombre</th>' +
+            '<th>% total</th> ' +
+            '<th>ejercicios completados</th>' +
+            '<th>% de ejercicios</th>' +
+            '<th>quizzes completados</th>' +
+            '<th>% de quizzes</th>' +
+            '<th>lecturas completadas</th>' +
+            '<th>% de lecturas</th>'
+          '</tr>'
+          usersWithStats.forEach(ele => {
+            if (ele.stats) {
+              template += '<tr>';
+              template += `<td>${ele.name}</td>`
+              template += `<td>${ele.stats.percent}</td>`
+              template += `<td>${ele.stats.exercises.completed}</td>`
+              template += `<td>${ele.stats.exercises.percent}</td>`
+              template += `<td>${ele.stats.quizzes.completed}</td>`
+              template += `<td>${ele.stats.quizzes.percent}</td>`
+              template += `<td>${ele.stats.reads.completed}</td>`
+              template += `<td>${ele.stats.reads.percent}</td>`
+            }
+          })
+          dataSection.innerHTML = template;
+        })
+
+      })
+    }
+    else {
+      alert("no hay  datos");
+    }
+  });
+
+}
