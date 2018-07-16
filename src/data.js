@@ -1,90 +1,76 @@
 window.computeUsersStats = (users, progress, courses) => {
-    users.forEach(user => {
-        let userId = user.id
-        const userProgress = progress[userId];
-        courses.forEach(userCourse => {
-            if (userProgress.hasOwnProperty(userCourse)) {
-                let percentTotal = 0;
-                let exercisesTotal = 0;
-                let exercisesCompleted = 0;
-                let quizzesTotal = 0;
-                let quizzesCompleted = 0;
-                let quizzesScoreSum = 0;
-                let readsTotal = 0;
-                let readsCompleted = 0;
-
-                percentTotal += userProgress[userCourse].percent;
-                const unitsValues = Object.values(userProgress[userCourse].units);
-                unitsValues.forEach(eleUnitsValues => {
-                    const partsUnits = Object.values(eleUnitsValues.parts);
-
-                    partsUnits.forEach(part => {
-                        if (part.type === 'read') {
-                            readsTotal++;
-                            if (part.completed === 1) {
-                                readsCompleted++;
-                            }
+    let usersWithStats = users;
+    let stats = {};
+    usersWithStats.forEach(user => {
+        stats = {
+            percent: 0,
+            exercises: {
+                total: 0,
+                completed: 0,
+                percent: 0
+            },
+            reads: {
+                total: 0,
+                completed: 0,
+                percent: 0
+            },
+            quizzes: {
+                total: 0,
+                completed: 0,
+                percent: 0,
+                scoreSum: 0,
+                scoreAvg: 0
+            }
+        }
+        const userprogress = progress[user.id];
+        const userCourse = userprogress[courses];
+        if (userCourse) {
+            let percentTotal = userCourse.percent;
+            let exercisesTotal = 0;
+            let exercisesCompleted = 0;
+            let quizzesTotal = 0;
+            let quizzesCompleted = 0;
+            let quizzesScoreSum = 0;
+            let readsTotal = 0;
+            let readsCompleted = 0;
+            const units = userCourse.units
+            Object.values(units).forEach(unit => {
+                Object.values(unit.parts).forEach(part => {
+                    if (part.type === 'practice' && part.hasOwnProperty('exercises')) {
+                        Object.values(part.exercises).forEach((exercise) => {
+                            exercisesTotal = exercisesTotal + 1;
+                            exercisesCompleted = exercisesCompleted + part.completed
+                        })
+                    }
+                    else if (part.type === 'read') {
+                        readsTotal = readsTotal + 1;
+                        readsCompleted = readsCompleted + part.completed;
+                    }
+                    else  if (part.type === 'quiz') {
+                        quizzesTotal += 1;
+                        if (part.completed == 1) {
+                            quizzesCompleted += 1;
+                            quizzesScoreSum += part.score;
                         }
-                        if (part.type === 'practice' && part.hasOwnProperty("exercises")) {
-
-                            let arrExercisesTotal = Object.keys(part.exercises);
-                            exercisesTotal += arrExercisesTotal.length;
-                            exercisesCompleted += part.completed;
-                        }
-                        if (part.type === 'quiz') {
-                            quizzesTotals++;
-                            if (part.completed === 1 && part.hasOwnProperty("score")) {
-                                quizzesCompleted++;
-                                quizzesScoreSum += part.score;
-                            }
-                        }
-                    })
-                })
-                user.stats = {
-                    percent: percentTotal,
-                    exercises: {
-                        total: exercisesTotal,
-                        completed: exercisesCompleted,
-                        percent: Math.round(exercisesCompleted * 100)
-                    },
-                    reads: {
-                        total: readsTotal,
-                        completed: readsCompleted,
-                        percent: Math.round(readsCompleted * 100 / readsTotal)
-                    },
-                    quizzes: {
-                        total: quizzesTotal,
-                        completed: quizzesCompleted,
-                        percent: Math.round(quizzesCompleted * 100 / quizzesTotal),
-                        scoreSum: quizzesScoreSum,
-                        scoreAvg: Math.round(quizzesScoreSum / quizzesTotal)
-                    },
-                }
-            } else {
-                user.stats = {
-                    percent: 0,
-                    exercises: {
-                        total: 0,
-                        completed: 0,
-                        percent: 0
-                    },
-                    reads: {
-                        total: 0,
-                        completed: 0,
-                        percent: 0
-                    },
-                    quizzes: {
-                        total: 0,
-                        completed: 0,
-                        percent: 0,
-                        scoreSum: 0,
-                        scoreAvg: 0
-                    },
-                }
-            };
-        })
-    })
-    return users;
+                    }
+                });
+            });
+            stats.percent = percentTotal;
+            stats.exercises.completed = exercisesCompleted;
+            stats.exercises.percent = Math.round(exercisesCompleted / exercisesTotal * 100);
+            stats.exercises.total = exercisesTotal;
+            stats.quizzes.completed = quizzesCompleted;
+            stats.quizzes.percent = Math.round(quizzesCompleted / quizzesTotal * 100);
+            stats.quizzes.total = quizzesTotal;
+            stats.quizzes.scoreSum = quizzesScoreSum;
+            stats.quizzes.scoreAvg = Math.round(quizzesScoreSum / quizzesCompleted);
+            stats.reads.completed = readsCompleted;
+            stats.reads.percent = Math.round(readsCompleted / readsTotal * 100);
+            stats.reads.total = readsTotal;
+        }
+        user.stats = stats;
+    });
+    return usersWithStats;
 }
 window.sortUsers = (users, orderBy, orderDirection) => {
     let sortedUsers = users;
@@ -120,9 +106,8 @@ window.filterUsers = (users, search) => {
     return userFilter;
 }
 window.processCohortData = (options) => {
-    let coursesCohort = Object.keys(options.cohort.coursesIndex);
-    let computedUsers = computeUsersStats(options.cohortData.users, options.cohortData.progress, coursesCohort);
-    let usersSort = sortUsers(usersStats, options.orderBy, options.orderDirection);
-    let userFilter = filterUsers(orderUsers, options.search);
-    return userFilter;
+    let computedUsers = computeUsersStats(options.cohortData.users, options.cohortData.progress, Object.keys(options.cohort.coursesIndex));
+    let filter = filterUsers(computedUsers, options.search);
+    let usersSort = sortUsers(filter, options.orderBy, options.orderDirection)
+    return usersSort
 }

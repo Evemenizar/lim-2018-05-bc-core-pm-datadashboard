@@ -6,8 +6,8 @@ let cohortsSelect = document.getElementById('cohorts');
 let contHeader = document.getElementById('cont-header');
 let studentTable = document.getElementById('student-table');
 let searchStudent = document.getElementById('search');
-let orderBy = document.getElementById('order-by');
-let orderDirection = document.getElementById('order-direction');
+let orderByu = document.getElementById('order-by');
+let orderDirectionu = document.getElementById('order-direction');
 let tableStudent = document.getElementById('student-table');
 
 buttonHome.addEventListener('click', () => {
@@ -108,7 +108,7 @@ const SelectSedesCohorts = () => {
         template += `<td>${ele.stats.reads.completed}</td>`
         template += `<td>${ele.stats.reads.percent}</td>`
       })
-      dataSection.innerHTML = template;
+      studentTable.innerHTML = template;
       searchaa.addEventListener('keyup', () => {
         options.search = searchaa.value;
         let usersWithStats = processCohortData(options);
@@ -137,7 +137,7 @@ const SelectSedesCohorts = () => {
             template += `<td>${ele.stats.reads.percent}</td>`
           }
         })
-        dataSection.innerHTML = template;
+        studentTable.innerHTML = template;
       })
       orderByu.addEventListener('change', () => {
         orderDirectionu.addEventListener('change', () => {
@@ -145,7 +145,7 @@ const SelectSedesCohorts = () => {
           options.orderDirection = orderDirectionu.value;
           let usersWithStats = processCohortData(options);
           let template = '';
-          console.log(usersWithStats);
+        
           template +=
             '<br><tr>' +
             '<th>Nombre</th>' +
@@ -170,13 +170,10 @@ const SelectSedesCohorts = () => {
               template += `<td>${ele.stats.reads.percent}</td>`
             }
           })
-          dataSection.innerHTML = template;
+          studentTable.innerHTML = template;
         })
 
       })
-    }
-    else {
-      alert("no hay  datos");
     }
   });
 
