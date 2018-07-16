@@ -55,7 +55,6 @@ getData = (arrSedes) => {
   })
   return template;
 }
-
 countriesSelect.addEventListener('change', () => {
   fetch('../data/cohorts.json')
     .then(response => response.json())
