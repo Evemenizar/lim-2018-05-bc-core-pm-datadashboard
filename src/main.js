@@ -16,7 +16,7 @@ buttonHome.addEventListener('click', () => {
   document.body.style.backgroundImage = "none";
   contHeader.style.display = "block";
   cohortsPage.style.display = "block";
-  
+
 })
 const options = {
   cohort: null,
