@@ -1,4 +1,4 @@
-#  Laboratoria progress
+#  Data Dashboard - Laboratoria progress
 
   Laboratoria progress es una interfaz diseñada para las Training Managers. Esta aplicación permitirá visualizar el progreso de las alumnas de Laboratoria el cual sera de gran utilidad para que las TMs tengan una vista a detalle de cada alumna.
 
@@ -24,7 +24,7 @@ estudiante en su proceso de aprendizaje.
 
 
 
-##  Proceso de creacion de Laboratoria progress.
+##  Proceso de creación de Laboratoria progress.
 
 ## Encuesta
 
@@ -47,11 +47,9 @@ Luego de una encuesta previa procedimos a realizar un sketch a mano alzada de lo
 
 Teniendo los sketchs ya mencionados, creimos conveniente realizar una segunda entrevista para mejorar el prototipo y estar mas cerca a lo que las TMs requerían de una interfaz, y esto fue lo que nos dijo:
 
-
 ![entrevista](documentacion/entrevista/entrevista.PNG)
 
-
-De acuerdo a esta última entrevista, procedimos a realizar un segundo sketch.
+De acuerdo a esta última entrevista, procedimos a realizar un segundo sketch. 
 
 ![sketch2](documentacion/sketch/sketch2.jpg)
 
@@ -66,6 +64,16 @@ Concluimos que las usuarias (TMs), necesitaban una interfaz que les permita ver 
 Cada una de estas opciones a su vez tendrían filtros como: sede, generación y orden alfabetico, que permitirían una busqueda más eficaz con respecto al progreso de una alumna.
 
 
+## Conclusiones
+
+Concluimos que las usuarias (TMs), necesitaban una interfaz que les permita ver a detalle el historial de progreso de las alumnas de manera puntual y visualmente claro. Por ello se decidió hacer un menú con tres botones: 
+
+* Directorio, donde iría la información de todas las alumnas en general.
+* Pre-admisión, como el nombre lo dice aqui iría solo información de alumnas de pre-admision.
+* Bootcamp, al igual que en el de pre-admnisión aqui iría información de alumnas de bootcamp.
+
+Cada una de estas opciones a su vez tendrían filtros como: sede, generación y orden alfabetico, que permitirían una busqueda más eficaz con respecto al progreso de una alumna.
+
 ## Diagrama de flujo 
 
 ![diagramadeflujo](documentacion/Diagramadeflujo/diagramadeflujo.png)
@@ -73,16 +81,12 @@ Cada una de estas opciones a su vez tendrían filtros como: sede, generación y 
 
 ## Prototipo
 
-Una vez obtenido los sketchs finales, elaboramos muestro prototipo usando la plataforma de diseño 
- [Marvel app](https://marvelapp.com/)
+Una vez obtenido los sketchs finales, elaboramos muestro prototipo usando la plataforma de diseño [Marvel App](https://marvelapp.com/).
 
 ![1](documentacion/prototipoimagenes/1.png)
 
 
- [Prototipo](https://marvelapp.com/dd994i9)
-
-## Elaborado por:
-
-Sandra Ortiz y Evelyn Meniz
+[Prototipo](https://marvelapp.com/dd994i9)
 
 
+Evelyn Meniz
